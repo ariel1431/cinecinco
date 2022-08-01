@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ordenamiento de Columnas</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<style>
+		.row {
+			background: #e8e8e8;
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+
+		.columna {
+			background: #f2f2f2;
+			text-align:center;
+			padding: 10px;
+			border:1px solid #4d5061;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-between">
+			<div class="columna col-2 flex-last">Columna #1</div>
+			<div class="columna col-2 flex-unordered">Columna #2</div>
+			<div class="columna col-2 flex-first">Columna #3</div>
+			<div class="columna col-2 flex-first">Columna #4</div>
+		</div>
+
+		<div class="row">
+			<div class="columna col-md-7 push-md-5">Columna #1</div>
+			<div class="columna col-md-3 pull-md-7">Columna #2</div>
+		</div>
+	</div>
+
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+spring:
+  mail: 
+    host: smtp.gmail.com
+    port: 587
+    properties:
+        mail:
+            smtp:              
+                auth: true
+                starttls:
+                    required: true
+                    enable: true
+    username: CineCincoSemillero@gmail.com
+    password: oiuiMT39lb&85p#f^5tS&
+    
+  security:    oauth2:      client:
+        registration:          google:
+              client-id: 470956175694-h55poegl4sp65c3nvov1ekkiltnrie0a.apps.googleusercontent.com
+              client-secret: 6VMsmmdGofIBMgTM9DALzw3X
+              scope: profile
+  datasource: 
+    url: jdbc:mysql://localhost:3306/cine_cinco?allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true&serverTimezone=GMT&characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver 
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect      
+  thymeleaf:
+    cache: false 
+server:
+  error:
+    whitelabel:
+      enabled: false
+  servlet:
+    session:
+      cookie:
+           http-only: true
+      tracking-modes:
+      - cookie

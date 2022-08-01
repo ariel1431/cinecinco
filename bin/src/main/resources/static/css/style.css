@@ -1,0 +1,21 @@
+
+	<!-- Estilo del encabezado -->
+.header {
+	height: 70px;
+	
+}
+.body-block{
+	text-align: center;
+	color: aquamarine;
+	font-style: oblique;
+	font-size: 1cm;
+	background-color: rgb(107, 0, 110);
+}
+.left-block{
+	background-color: rgb(0, 0, 0);
+}
+.rigth-block{
+	background-color: rgb(0, 0, 0);
+}
+
+    

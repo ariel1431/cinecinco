@@ -1,0 +1,45 @@
+.pagobody {
+    margin: 0px;
+    padding: 0;
+    background: url(../img/salacine.jpg) no-repeat center top;
+    background-size: cover;
+    height: 100vh;
+    width: auto;
+}
+.btn-outline-success {
+    background-color: none;
+    color: white;
+    border-color: transparent;
+}
+.btn-outline-success:hover {
+    background-color: #CB4335;
+    border-color: transparent;
+}
+.containerpago {
+    background:#1C2833;
+    color: white;
+    padding: 70px 30px;
+    padding: 2%;
+    height: auto;
+    width: auto;
+    position: center;
+}
+.containerpago h1 {
+    margin: 0;
+    padding: 0 0 30px;
+    text-align: center;
+    font-size: 40px;
+}
+.btn-primary {
+    background-color: #CB4335;
+    border: none;
+}
+.btn-primary:hover {
+    background:#B03A2E;
+}
+.containertotal {
+    background: white;
+    color: black;
+    padding: 2%;
+    border-radius: 5px;
+}

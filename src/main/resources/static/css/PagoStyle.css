@@ -1,0 +1,145 @@
+/*-----Encabezado------*/
+.header {
+    height: 70px;
+
+}
+.body-block {
+    text-align: center;
+    color:#d82a3c;
+    font-style: oblique;
+    font-size: 1cm;
+    background: url(../img/salacine.jpg) no-repeat center top;
+}
+.left-block {
+    background-color: rgb(0, 0, 0);
+}
+.rigth-block {
+    background-color: rgb(0, 0, 0);
+}
+/*-----Body Pago-----*/
+.pagobody {
+    margin: 0px;
+    padding: 0;
+    background: url(../img/salacine.jpg) no-repeat center top;
+    background-size: cover;
+    height: 100vh;
+    width: auto;
+}
+/*--------Breadcrumb---------*/
+.bread-crumbs {
+    text-align: center;
+}
+.bread-crumbs ul{
+    list-style: none;
+    display: inline-block;
+}
+.bread-crumbs ul li{
+    display: inline-block;
+}
+.bread-crumbs ul li a{
+    display: block;
+    float: left;
+    height: 70px;
+    width: 400px;
+    background-color: #d82a3c;
+    text-align: center;
+    padding: 15px 20px 0 60px;
+    position: relative;
+    margin: 0 10px 0 0;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+.bread-crumbs li a::after {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -50px;
+    left: 100%;
+    z-index: 2;
+}
+.bread-crumbs li a::before {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    
+    position: absolute;
+    top: 40px;
+    margin-top: -50px;
+    margin-left: 0px;
+    left: 100%;
+    z-index: 1;
+
+}
+.bread-crumbs li:first-child a {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+.bread-crumbs li:first-child a::before {
+    display: none;
+}
+.bread-crumbs li:last-child a {
+    padding-right: 40px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.bread-crumbs li:last-child a::after {
+    display: none;
+}
+.bread-crumbs ul li a:hover {
+    background-color: #333;
+    color: white;
+} 
+
+/*-----Formulario pago-----*/
+.containerpago {
+    background:#1C2833;
+    color: white;
+    padding: 70px 30px;
+    padding: 2%;
+    height: auto;
+    width: auto;
+    position: center;
+}
+.containerpago h1 {
+    margin: 0;
+    padding: 0 0 30px;
+    text-align: center;
+    font-size: 40px;
+}
+/*------Total-----*/
+.containertotal {
+    background: #1C2833;
+    color: white;
+    padding: 2%;
+    border-radius: 5px;
+}
+/*-------Modal---------*/
+.modal-title {
+    color: black;
+}
+.modal-body {
+    color: black
+}
+/*-----Boton rojo CERRAR SESION----*/
+.btn-rojo-session {
+    background-color:#d82a3c;
+    color: #fff;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 5px 15px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    border: none;
+}
+.btn-rojo-session:hover {
+    background-color:#bd2433;
+    color: #000;
+    text-decoration: none;
+}
+

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<!-- The styles -->
+<link id="bs-css" href="css/bootstrap-cybrog.min.css" rel="stylesheet">
+
+<link href="css/charisma-app.css" rel="stylesheet">
+<link href="css/peliculastyle.css" rel="stylesheet">
+
+<!-- jQuery -->
+<script src="bower_components/jquery/jquery.min.js"></script>
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="img/clapperboard_cinema_icon-96px.png" alt="" width="40" height="35"
+          class="d-inline-block align-text-top">
+        CineCinco
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="Login.html">Iniciar Sesion</a>
+          </li>
+
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<body>
+
+
+  <div class="container">
+    <div class="row pelicula mt-3">
+
+      <div class="col-sm-2 col-lg-2">
+        <div class="sidebar-nav">
+          <div class="nav-canvas">
+
+            <ul class="nav nav-pills nav-stacked main-menu">
+              <h3 class="nav-header">Categorias</h3>
+              <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span>
+                    Terror</span></a>
+              </li>
+              <li><a class="ajax-link" href="ui.html"><i class="glyphicon glyphicon-eye-open"></i><span> UI
+                    Features</span></a>
+              </li>
+              <li><a class="ajax-link" href="form.html"><i class="glyphicon glyphicon-edit"></i><span>
+                    Forms</span></a></li>
+              <li><a class="ajax-link" href="chart.html"><i class="glyphicon glyphicon-list-alt"></i><span>
+                    Charts</span></a>
+              </li>
+              <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-font"></i><span>
+                    Typography</span></a>
+              </li>
+              <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span>
+                    Gallery</span></a>
+              </li>
+              <li class="nav-header hidden-md">Sample Section</li>
+              <li><a class="ajax-link" href="table.html"><i class="glyphicon glyphicon-align-justify"></i><span>
+                    Tables</span></a></li>
+              <li class="accordion">
+                <a href="#"><i class="glyphicon glyphicon-plus"></i><span> Accordion Menu</span></a>
+                <ul class="nav nav-pills nav-stacked">
+                  <li><a href="#">Child Menu 1</a></li>
+                  <li><a href="#">Child Menu 2</a></li>
+                </ul>
+              </li>
+              <li><a class="ajax-link" href="calendar.html"><i class="glyphicon glyphicon-calendar"></i><span>
+                    Calendar</span></a>
+              </li>
+              <li><a class="ajax-link" href="grid.html"><i class="glyphicon glyphicon-th"></i><span> Grid</span></a>
+              </li>
+              <li><a href="tour.html"><i class="glyphicon glyphicon-globe"></i><span> Tour</span></a></li>
+              <li><a class="ajax-link" href="icon.html"><i class="glyphicon glyphicon-star"></i><span>
+                    Icons</span></a></li>
+              <li><a href="error.html"><i class="glyphicon glyphicon-ban-circle"></i><span> Error Page</span></a>
+              </li>
+              <li><a href="login.html"><i class="glyphicon glyphicon-lock"></i><span> Login Page</span></a>
+              </li>
+            </ul>
+            <label id="for-is-ajax" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax on menu</label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-xs-10 col-md-10">
+        <div class="row premiere-card ">
+          <!-- Estrenos -->
+          <div class="col-xs-6 col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="img/enguerra.jpg" class="card-img-top img-fluid" alt="">
+              </div>
+              <div class="card-block-premiere">
+                <h3 class="card-title">En guerra con mi abuelo</h3>
+                <p class="card-text">Insertar descripcion</p>
+                <a href="#" class="btn btn-premiere">Comprar reserva</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="img/mortalkombat.jpg" class="card-img-top img-fluid" alt="">
+              </div>
+              <div class="card-block-premiere">
+                <h3 class="card-title">Mortal Kombat</h3>
+                <p class="card-text">Insertar descripcion</p>
+                <a href="#" class="btn btn-premiere">Comprar reserva</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="img/zeta.jpg" class="card-img-top img-fluid" alt="">
+              </div>
+              <div class="card-block-premiere">
+                <h3 class="card-title">Zeta</h3>
+                <p class="card-text">Insertar descripcion</p>
+                <a href="#" class="btn btn-premiere">Comprar reserva</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="img/venganzaimplacable.webp" class="card-img-top img-fluid" alt="">
+              </div>
+              <div class="card-block-premiere">
+                <h3 class="card-title">Venganza implacable</h3>
+                <p class="card-text">Insertar descripcion</p>
+                <a href="#" class="btn btn-premiere">Comprar reserva</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row premiere-card mt-3">
+          <div class="col-xs-6 col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="img/enguerra.jpg" class="card-img-top img-fluid" alt="">
+              </div>
+              <div class="card-block-premiere">
+                <h3 class="card-title">En guerra con mi abuelo</h3>
+                <p class="card-text">Insertar descripcion</p>
+                <a href="#" class="btn btn-premiere">Comprar reserva</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="img/mortalkombat.jpg" class="card-img-top img-fluid" alt="">
+              </div>
+              <div class="card-block-premiere">
+                <h3 class="card-title">Mortal Kombat</h3>
+                <p class="card-text">Insertar descripcion</p>
+                <a href="#" class="btn btn-premiere">Comprar reserva</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="img/zeta.jpg" class="card-img-top img-fluid" alt="">
+              </div>
+              <div class="card-block-premiere">
+                <h3 class="card-title">Zeta</h3>
+                <p class="card-text">Insertar descripcion</p>
+                <a href="#" class="btn btn-premiere">Comprar reserva</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="img/venganzaimplacable.webp" class="card-img-top img-fluid" alt="">
+              </div>
+              <div class="card-block-premiere">
+                <h3 class="card-title">Venganza implacable</h3>
+                <p class="card-text">Insertar descripcion</p>
+                <a href="#" class="btn btn-premiere">Comprar reserva</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 mt-5"></div>
+  <div class="col-12 mt-5"></div>
+  </div>
+  </div>
+
+  </div>
+
+</body>
+
+
+<!-- library for cookie management -->
+<script src="js/jquery.cookie.js"></script>
+
+<!-- library for making tables responsive -->
+<script src="bower_components/responsive-tables/responsive-tables.js"></script>
+
+
+
+
+<!-- application script for Charisma demo -->
+<script src="js/charisma.js"></script>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:replace="fragments :: main_head"></div>
+</head>
+
+<body>
+    <div th:replace="fragments :: nav_bar_usuario_logueado"></div>
+
+    <h1>Salas ABM</h1>
+    <hr>
+
+    <p th:if="${error != null}" th:text="${error}" style="color:red;"></p>
+
+    <!--
+        CARGA DE SALAS
+    -->
+    <h4>Cargar Nuevas Salas</h4>
+    <form action="/ABM/agregarSala" method="POST" th:object="${sala}">
+        <label>Nombre de la Sala:</label>
+        <input type="text" th:field="*{nombre}"></input>
+        <br />
+        <br />
+        <label>Cantidad de butacas:</label>
+        <input type="number" th:field="*{cantidadButacas}"></input>
+        <br /><button type="submit" class="btn btn-primary">Guardar Sala</button>
+    </form>
+    <hr>
+
+    <!--
+        ELIMINACION DE SALAS
+    -->
+    <details>
+        <summary>Eliminar Sala</summary>
+        <br>
+        <form action="/ABM/eliminarSala" method="POST">
+            <label>Titulo de la sala</label>
+            <select class="form-control" name="idSala">
+                <option th:each="salaListada : ${salas}" th:value="${salaListada.id}" th:text="${salaListada.nombre}">
+                </option>
+            </select>
+            <br />
+            <br /><button type="submit" class="btn btn-primary">Eliminar Sala</button>
+        </form>
+    </details>
+    <br />
+
+    <!--
+        MODIFICACION DE SALAS
+    -->
+    <details>
+        <summary>Modificar Sala</summary>
+        <form action="/ABM/modificarSala" method="POST" th:object="${sala}">
+            <br>
+            <label>Seleccione la sala a modificar</label>
+            <select class="form-control" th:field="*{id}">
+                <option th:each="salaListada : ${salas}" th:value="${salaListada.id}" th:text="${salaListada.nombre}">
+                </option>
+            </select>
+            <br />
+            <br />
+            <label>Nombre de la Sala</label>
+            <input type="text" th:field="*{nombre}"></input>
+            <br />
+            <br />
+            <label>Cantidad de Butacas</label>
+            <input type="number" th:field="*{cantidadButacas}"></input>
+            <br />
+            <br /><button type="submit" class="btn btn-primary">Modificar Sala</button>
+        </form>
+    </details>
+
+    <!--
+        LISTADO DE SALAS
+    -->
+    <hr>
+    <table border="1" align="center" bordercolor="black" border-collapse: collapse; border-spacing: 0;>
+
+        <caption>Lista de Salas Habilitadas</caption>
+
+        <thead>
+            <tr>
+                <th>Nombre de la Sala</th>
+                <th>Cantidad de Butacas</th>
+            </tr>
+            <thead>
+                <tbody>
+                    <tr th:each="salaListada: ${salas}">
+                        <td th:text="${salaListada.nombre}"></td>
+                        <td th:text="${salaListada.cantidadButacas}"></td>
+                    </tr>
+                </tbody>
+    </table>
+
+
+</body>
+
+</html>

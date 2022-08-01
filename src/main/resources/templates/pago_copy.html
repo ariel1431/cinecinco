@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<!--Meta Links requeridos-->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--Link Bootstrap-->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" href="/css/PagoStyle.css">
+<link href="/img/clapperboard_cinema_icon-32px.png" rel="shortcut icon" />
+
+<title>Realizar Pago</title>
+</head>
+
+<body class="pagobody">
+	<!--NavBar-->
+	<header>
+		<div th:replace="fragments :: nav_bar"></div>
+	</header>
+
+	<div class="row">
+		<div class="col-12 col-md-4 col-xl-4">
+			<!--Total-->
+			<div class="containertotal">
+				<h1>Ticket</h1>
+				<p>
+					Cantidad de Entradas: <span th:text="${cantEntradas}"></span>
+				</p>
+				<p>Asientos Seleccionados:</p>
+				<ul>
+					<li th:each="butaca : ${butacas}" th:text="${butaca.nombre}"></li>
+				</ul>
+				<p>
+					Precio Entrada: <span th:text="${funcion.precioEntrada}"></span>
+				</p>
+				<p>
+					Nombre Sala: <span th:text="${funcion.sala.nombre}"></span>
+				</p>
+				<p>
+					Horario Funcion: <span th:text="${funcion.horario.hora}"></span>
+				</p>
+				<p>
+					Total a pagar: <span th:text="${totalPagar}"></span>
+				</p>
+			</div>
+		</div>
+		<div class="col-12 col-md-8 col-xl-8">
+			<!--Formulario Metodos de pago-->
+			<div class="containerpago">
+				<h1>Metodos de pago</h1>
+				<form method="POST" action="/compra/realizar_pago">
+
+					<div class="col-sm-10">
+						<div class="form-check">
+							<input th:each="butaca : ${butacas}" type="hidden"
+								th:value="${butaca.id}" name="idsButacas"> <input
+								type="hidden" th:value="${totalPagar}" name="totalPagar">
+							<input type="hidden" th:value="${funcion.id}" name="idFuncion">
+							<button class="btn btn-primary"
+								style="background-color: rgb(128, 191, 255); color: black"
+								type="submit">
+								<img src="/img/credit_card_icon_128px.png" width="50px"
+									height="40px"> Mercado Pago
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="col"></div>
+	</div>
+	</div>
+
+	<script src="/js/jquery.js"></script>
+	<!--Link Bootstrap JS-->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+		integrity="undefined" crossorigin="anonymous"></script>
+</body>
+
+</html>

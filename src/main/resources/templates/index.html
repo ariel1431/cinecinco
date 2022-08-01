@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+<!--Meta links Requeridos-->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--Link Bootstrap-->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+	crossorigin="anonymous">
+
+
+<!--Link de estilos para visualizarlo en Spring o Netbeans -->
+<link rel="stylesheet" href="css/indexstyle.css">
+<link href="img/clapperboard_cinema_icon-32px.png" rel="shortcut icon" />
+
+<title>CineCinco</title>
+
+</head>
+
+<body class="body">
+	<!--NavBar-->
+	<header>
+		<div th:replace="fragments :: nav_bar"></div>
+	</header>
+	<!--NavBar-->
+	<div class="container carousel mt-3">
+		<div class="row carousel-login">
+			<!-- Carrusel -->
+			<div class="col-xs-12 col-md-12 mt-12">
+				<!-- <div class="carousel slide" id="principal-carousel"
+					data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#principal-carousel" data-slid-to="0"
+							class="active"></li>
+						<li data-target="#principal-carousel" data-slid-to="1"></li>
+						<li data-target="#principal-carousel" data-slid-to="2"></li>
+					</ol>
+
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img th:src="@{${'img/black-widow.jpg'}}" alt="" width="1300px"
+								heigth="100px">
+						</div>
+						<div th:each="pelicula : ${peliculas}" class="carousel-item">
+							<img
+								th:src="@{'data:/'+${pelicula.foto.mime}+';base64,'+${pelicula.foto.getImgData()}}"
+								alt="" width="1300px"
+								heigth="100px">
+						</div>
+
+					</div>
+
+					<a href="#principal-carousel" class="carousel-control-prev"
+						data-slide="prev"> <span class="carousel-control-prev-icon"
+						aria-hidden="true"></span> <span class="sr-only">Anterior</span>
+					</a> <a href="#principal-carousel" class="carousel-control-next"
+						data-slide="next"> <span class="carousel-control-next-icon"
+						aria-hidden="true"></span> <span class="sr-only">Siguiente</span>
+					</a>
+				</div> -->
+				<div id="principal-carousel" class="carousel slide"
+					data-bs-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="/img/0.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="/img/1.png" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="/img/2.png" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="/img/3.png" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="/img/4.png" class="d-block w-100" alt="...">
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button"
+						data-bs-target="#principal-carousel" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button"
+						data-bs-target="#principal-carousel" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- Cuadro de Login -->
+
+	<div th:replace="fragments :: cuadro_para_login"></div>
+	
+	<div class="row premiere-card-title mt-3">
+		<!-- Titulos en cartel -->
+		<div class="premiere col-xs-12 col-md-12" id="cartelera">
+			<h1 class="title-premiere">Cartelera</h1>
+			<h5 class="body-premiere">
+				Consulta por promos con tarjetas seleccionadas
+				</h1>
+		</div>
+	</div>
+
+	<div class="row premiere-card mt-3">
+		<!-- En cartel -->
+		<div th:each="pelicula : ${enCartel}" class="col-xs-6 col-md-3">
+			<div class="card">
+				<div class="card-img">
+					<img
+						th:src="@{'data:/'+${pelicula.foto.mime}+';base64,'+${pelicula.foto.getImgData()}}"
+						class="card-img-top img-fluid" alt="">
+				</div>
+				<div class="card-block-premiere">
+					<h3 th:text="${pelicula.titulo}" class="card-title"></h3>
+					<br>
+					<!-- Cambio en enlace de portada -->
+					<a th:href="@{/portada/} +${pelicula.id}" class="btn-rojo">Ver
+						más</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row premiere-card-title mt-3">
+		<!-- Titulos Estrenos -->
+		<div class="premiere col-xs-12 col-md-12" id="premiere">
+			<h1 class="title-premiere">Estrenos</h1>
+			<h5 class="body-premiere">Mira lo que se viene y reserva tu
+				lugar para la avant premiere</h5>
+		</div>
+	</div>
+
+	<div class="row premiere-card mt-3">
+		<!-- Estrenos -->
+		<div th:each="pelicula : ${estrenos}" class="col-xs-6 col-md-3">
+			<div class="card">
+				<div class="card-img">
+					<img
+						th:src="@{'data:/'+${pelicula.foto.mime}+';base64,'+${pelicula.foto.getImgData()}}"
+						class="card-img-top img-fluid" alt="">
+				</div>
+				<div class="card-block-premiere">
+					<h3 th:text="${pelicula.titulo}" class="card-title"></h3>
+					<br> <a th:href="@{/portada/} +${pelicula.id}"
+						class="btn-rojo">Ver más</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 mt-5"></div>
+	</div>
+		
+		
+	</div>
+	</div>
+
+      <footer>
+       
+       <div class="row quienessomos  mt-3">
+			<!-- Quienes somos -->
+			<div class="card-block quien col-sm-6">
+				<h3 class="card-title">¿Quienes somos?</h3>
+				<p class="card-text">Somos un equipo de desarrolladores trainees del Semillero de Quinto Impacto, que es una
+				empresa de software orientada a desarrollar innovaciones tecnológicas de triple impacto desde la integración 
+				social. Buscamos aprender todas las herramientas necesarias para desarrollar una web. Nuestro equipo Backend: 
+				Octavio Fariña, Pierre Crespin, Ariel Flores y Juan M Godoy; Frontend: Marina Baiardi,
+				Nicole Bustos, Julian Giamportone; Scrum Master: Eimi Quinteros.</p>
+
+			</div>	
+			<div class="contacto col-sm-2">
+				<!--Contacto-->
+				<h3 class="card-title">Contactanos</h3>
+				<img src="/img/iconmonstr-whatsapp72.png" width="30px" height="30px"> <label>+54 9 261 543 678</label>
+				<br>
+				<br>
+				<img src="/img/iconmonstr-email72.png" width="30px" height="30px"> <label>info@cinecinco.com</label>
+				<br>
+				<br>
+				<img src="/img/iconmonstr-facebook72.png" width="30px" height="30px"> <label>/cinecinco</label>
+			</div>
+            <div class="contacto col-sm-2">
+					<img class="img-footer" src="/img/cine5.png" alt="">
+			</div>
+		</div>
+        
+    </footer>
+
+	<script src="js/jquery.js"></script>
+	<!--Link Bootstrap JS-->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+		integrity="undefined" crossorigin="anonymous"></script>
+</body>
+</html>

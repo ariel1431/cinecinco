@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<!--Meta links Requeridos-->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--Link Bootstrap-->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+	crossorigin="anonymous">
+
+<!--Link estilos y logo pestaña-->
+<link rel="stylesheet" href="/css/indexstyle.css">
+<link href="/img/clapperboard_cinema_icon-32px.png" rel="shortcut icon" />
+<title>CineCinco</title>
+
+</head>
+
+<body class="body">
+	<!--NavBar-->
+	<header>
+		<div th:replace="fragments :: nav_bar"></div>
+	</header>
+	<div class="container carousel mt-3">
+		<div class="row carousel-login">
+			<!-- Carrusel -->
+			<div class="col-xs-12 col-md-8 mt-8">
+				<div class="carousel slide" id="principal-carousel"
+					data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#principal-carousel" data-slid-to="0"
+							class="active"></li>
+						<li data-target="#principal-carousel" data-slid-to="1"></li>
+						<li data-target="#principal-carousel" data-slid-to="2"></li>
+					</ol>
+
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<!-- <img src="img/" alt=""> -->
+							<img th:src="@{${'img/black-widow.jpg'}}" alt="" width="900px"
+								heigth="100px">
+						</div>
+						<div th:each="pelicula : ${peliculas}" class="carousel-item">
+							<!-- <img src="img/black-widow.jpg" alt=""> -->
+							<img
+								th:src="@{'data:/'+${pelicula.foto.mime}+';base64,'+${pelicula.foto.getImgData()}}"
+								alt="">
+						</div>
+
+					</div>
+
+					<a href="#principal-carousel" class="carousel-control-prev"
+						data-slide="prev"> <span class="carousel-control-prev-icon"
+						aria-hidden="true"></span> <span class="sr-only">Anterior</span>
+					</a> <a href="#principal-carousel" class="carousel-control-next"
+						data-slide="next"> <span class="carousel-control-next-icon"
+						aria-hidden="true"></span> <span class="sr-only">Siguiente</span>
+					</a>
+				</div>
+			</div>
+			<!-- TOP 5 -->
+			<div class="col-xs-12 col-md-4 mt-4">
+				<div class="bodylogin">
+					<div class="card-block">
+						<h3 class="card-title">TOP #5 de las más vistas</h3>
+						<hr>
+						<a class="card-link" href="">#1 Black Widow</a> <br>
+						<hr>
+						<a class="card-link" href="">#2 Escuadron Suicida 2</a> <br>
+						<hr>
+						<a class="card-link" href="">#3 El conjuro 3</a> <br>
+						<hr>
+						<a class="card-link" href="">#4 Cruella</a> <br>
+						<hr>
+						<a class="card-link" href="">5# Space Jam 2</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row premiere-card-title mt-3">
+			<!-- Titulos Estrenos -->
+			<div class="premiere col-xs-12 col-md-12" id="cartelera">
+				<h1 class="title-premiere">Cartelera</h1>
+				<h5 class="body-premiere">
+					Consulta por promos con tarjetas seleccionadas
+					</h1>
+			</div>
+		</div>
+
+		<div class="row premiere-card mt-3">
+			<!-- En cartel -->
+			<div th:each="pelicula : ${enCartel}" class="col-xs-6 col-md-3">
+				<div class="card">
+					<div class="card-img">
+						<img
+							th:src="@{'data:/'+${pelicula.foto.mime}+';base64,'+${pelicula.foto.getImgData()}}"
+							class="card-img-top img-fluid" alt="">
+					</div>
+					<div class="card-block-premiere">
+						<h3 th:text="${pelicula.titulo}" class="card-title"></h3>
+						<!-- Cambio en enlace de portada -->
+						<a th:href="@{/portada/} +${pelicula.id}" class="btn-rojo">Ver
+							más</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12 mt-5"></div>
+
+		</div>
+
+		<div class="row premiere-card-title mt-3">
+			<!-- Titulos Estrenos -->
+			<div class="premiere col-xs-12 col-md-12" id="premiere">
+				<h1 class="title-premiere">Estrenos</h1>
+				<h5 class="body-premiere">
+					Mirá lo que se viene y reserva tu lugar para la avant premiere
+					</h1>
+			</div>
+		</div>
+
+		<div class="row premiere-card mt-3">
+			<!-- Estrenos -->
+			<!-- Estrenos -->
+			<div th:each="pelicula : ${estrenos}" class="col-xs-6 col-md-3">
+				<div class="card">
+					<div class="card-img">
+						<img
+							th:src="@{'data:/'+${pelicula.foto.mime}+';base64,'+${pelicula.foto.getImgData()}}"
+							class="card-img-top img-fluid" alt="">
+					</div>
+					<div class="card-block-premiere">
+						<h3 th:text="${pelicula.titulo}" class="card-title"></h3>
+						<a th:href="@{/portada/} +${pelicula.id}" class="btn-rojo">Ver
+							más</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 mt-5"></div>
+		</div>
+
+		<div class="quienessomos" id="quienessomos">
+			<div class="row quienessomos  mt-3">
+				<!-- Quienes somos -->
+				<div class="quien col-xs-12 col-md-6">
+					<h3 class="card-title">¿Quienes somos?</h3>
+					<p class="card-text">Lorem ipsum dolor sit amet consectetur
+						adipisicing elit. Assumenda commodi voluptatibus ipsum error
+						molestiae, ad neque soluta laboriosam rerum optio perferendis
+						voluptatum esse velit ullam a, dolore obcaecati similique odit.</p>
+					<a class="btn-rojo" href="">Aporta a la causa</a>
+
+				</div>
+				<div class="quien col-xs-12 col-md-6">
+					<h3 class="card-title" style="font-size: 50px; margin-top: 35px;">
+						<img src="/img/clapperboard_cinema_icon-96px.png" alt="">CineCinco
+					</h3>
+					<br>
+					<!--Boton modal-->
+					<button type="button" class="btn btn-danger" id="btnModal"
+						data-bs-toggle="modal" data-bs-target="#exampleModal">
+						Contactanos</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="exampleModal" tabindex="-1"
+						aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">Dejanos tu
+										mensaje</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<div class="mb-3">
+										<label for="exampleFormControlInput1" class="form-label">Dirección
+											de Email</label> <input type="email" class="form-control"
+											id="exampleFormControlInput1"
+											placeholder="Ingrese Dirección de Email">
+									</div>
+									<div class="mb-3">
+										<label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+										<textarea class="form-control"
+											id="exampleFormControlTextarea1" rows="3"
+											placeholder="Escriba su mensaje..."></textarea>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-bs-dismiss="modal">Cerrar</button>
+									<button type="button" class="btn btn-danger">Enviar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 mt-5"></div>
+			<div class="col-12 mt-5"></div>
+		</div>
+	</div>
+
+
+	<script src="js/jquery.js"></script>
+	<!--Link Bootstrap JS-->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+		integrity="undefined" crossorigin="anonymous"></script>
+</body>
+</html>

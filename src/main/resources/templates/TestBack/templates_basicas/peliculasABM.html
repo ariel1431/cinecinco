@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:replace="fragments :: main_head"></div>
+</head>
+
+
+<body>
+    <div th:replace="fragments :: nav_bar_usuario_logueado"></div>
+
+    <h1>SISTEMA DE GESTION DE PELICULAS</h1>
+    <hr/>
+
+    <p th:if="${error != null}" th:text="${error}" style="color:red;"></p>
+
+    <details>
+        <summary>Cargar nuevas peliculas</summary>
+        <form action="/ABM/agregarPelicula" method="POST" th:object="${pelicula}">
+            <br/>
+            <br/>
+            <label>Titulo de la pelicula</label>
+            <input type="text" th:field="*{titulo}"></input>
+            <br/>
+            <br/>
+            <label>Sinopsis de la pelicula</label>
+            <input type="text" th:field="*{sinopsis}"></input>
+            <br/>
+            <br/>
+            <label>Genero</label>
+            <select class="custom-select" th:field="*{genero}">
+              <option th:each="generoP : ${generos}" th:value="${generoP}" th:text="${generoP}"></option>
+            </select>
+            <br/>
+            <br/>
+            <br/><button type="submit" class="btn btn-primary">Guardar Pelicula</button>
+        </form>
+    </details>
+    <br/>
+    <br/>
+    <br/>
+    <details>
+        <summary>Eliminar Pelicula</summary>
+        <form action="/ABM/eliminarPelicula" method="POST" enctype="multipart/form-data">
+            <label>Titulo de la pelicula</label>
+            <select class="form-control" name="idPelicula"> 
+              <option th:each="peliculaListada : ${peliculas}" th:value="${peliculaListada.id}" th:text="${peliculaListada.titulo}"></option>
+            </select>
+            <br/>
+            <br/><button type="submit" class="btn btn-primary">Eliminar Pelicula</button>
+        </form>
+    </details>
+    <br/>
+    <br/>
+
+    <details>
+        <summary>Modificar Pelicula</summary>
+        <form action="/ABM/modificarPelicula" method="POST" th:object="${pelicula}">
+            <br/>
+            <label>Seleccione la pelicula a modificar</label>
+            <select class="form-control" th:field="*{id}">
+              <option th:each="peliculaListada : ${peliculas}" th:value="${peliculaListada.id}" th:text="${peliculaListada.titulo}">
+              </option>
+            </select>
+            <br/>
+            <p><q>Modifique solamente los datos deseados</q></p>
+
+            <label>Titulo de la pelicula</label>
+            <input type="text" th:field="*{titulo}"></input>
+            <br/>
+            <br/>
+            <label>Sinopsis de la pelicula</label>
+            <input type="text" th:field="*{sinopsis}"></input>
+            <br/>
+            <label>Genero</label>
+            <select class="form-control" th:field="*{genero}"> 
+              <option th:each="generoP : ${generos}" th:value="${generoP}" th:text="${generoP}"></option>
+            </select>
+            <br/>
+            <br/>
+            <br/><button type="submit" class="btn btn-primary">Modificar Pelicula</button>
+        </form>
+    </details>
+    <br/>
+    <br/>
+    <details>
+        <summary>Ver todas las peliculas</summary>
+        <table border="1" align="center" bordercolor="green" border-collapse: collapse; border-spacing: 0;>
+
+            <caption>Lista general de peliculas</caption>
+
+            <thead>
+                <tr>
+                    <th>TITULO DE LA PELICULA</th>
+                    <th>SINOPSIS</th>
+                    <th>FECHA DE ALTA</th>
+                    <th>GENERO</th>
+                    <th></th>
+                </tr>
+                <thead>
+                    <tbody>
+                        <tr th:each="peliculaListada: ${peliculas}">
+                            <td th:text="${peliculaListada.titulo}"></td>
+                            <td th:text="${peliculaListada.sinopsis}"></td>
+                            <td th:text="${peliculaListada.alta}"></td>
+                            <td th:text="${peliculaListada.genero}"></td>
+                        </tr>
+                    </tbody>
+        </table>
+    </details>
+
+</body>
+
+</html>

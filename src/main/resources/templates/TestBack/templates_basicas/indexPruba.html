@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <title>MercadoPago</title>
+    <style>
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conteiner">
+        <h2 class="display-2">Detalle producto</h2>
+        <div class="row" id="row">
+        
+            <div class="col-md-6 offset-3">
+                 <div class="card">
+                     <div class="card-header">
+                         <h3>Remera de mujer manga corta</h3>
+                     </div>
+                     <div class="card-body">
+                         <img src="" style="width: 100%"alt="Foto del producto">
+                         <hr>
+                         <h4>Descripcion</h4>
+                         <p>Lorem ipsum dolor sit amet,
+                              consectetur adipisicing elit.
+                               Nesciunt, dolores magni consequuntur 
+                               dolorum consectetur voluptates, tempo
+                               necessitatibus ab perspiciatis,
+                              unde ut sit quasi aperiam quam!
+                            </p>
+                            <hr>
+                            <h4>Precio $ 2500</h4>
+                            <div>
+                                <form action="http://localhost:8080/pago/realizar_pago" method="POST">
+                                    <input type="hidden" name="title" value="Remera de mujer manga corta">
+                                    <input type="hidden" name="price" value="2500">
+                                    <input type="submit" value="comprar ahora" class="btn btn-primary btn-block">
+                                </form>
+                            </div>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</body>
+ <!--<script>
+    window.onload = function () {
+        const row = ducument.getElementById('row');
+        let col = document.createElement('div');
+        col.classList.add('col-md-4');
+        row.uppendChild(col);
+
+        let card = document.createElement('div');
+        card.classList.add('card');
+        col.uppendChild(card);
+
+        let carHeader = document.createElement('div');
+        carHeader.classList.add('card-header');
+        card.uppendChild(carHeader);
+        carHeader.innerHTML = "<h3> Titulo</h3>"
+
+        let carBody = document.createElement('div');
+        carBody.classList.add("card-body");
+        cartd.uppendChild(carBody);
+        carBody.innerHTML = '"<img src="">';
+        let priceBox = document.createElement('h4');
+        carBody.uppendChild(priceBox);
+    }
+</script>-->
+
+</html>

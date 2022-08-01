@@ -1,0 +1,27 @@
+/*-------Body gestor pelicula--------*/
+.sistpeliculabody {
+    margin: 0px;
+    padding: 0;
+    background: url(../img/salacine.jpg) no-repeat center top;
+    height: 100vh;
+    width: auto;
+}
+
+/*-------- Titulo gestor pelicula--------*/
+.sistpeliculabody h1 {
+    margin: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: white;
+}
+
+/*--------Botones collapse gestor pelicula-------*/
+#btn-collapse-pelicula {
+    margin-top: auto;
+    border-bottom: 1px solid;
+    height: 50px;
+    width: 440px;
+    border: none;
+    margin-bottom: 4%;
+}

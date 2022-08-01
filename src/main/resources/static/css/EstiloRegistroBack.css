@@ -1,0 +1,56 @@
+/*-----Registro body-----*/
+.registrobody {
+    margin: 0.2px;
+    padding: 0;
+    background: url(../img/salacine.jpg) no-repeat center top;
+    background-size: cover;
+    height: 100vh;
+    width: auto;
+}
+
+/*-----Titulo Bienvenidos a CineCinco------*/
+.tituloregistro {
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+/*-------Container Registro--------*/
+.containerRegistro {
+    background:#1C2833;
+    color: white;
+    padding: 70px 30px;
+    padding: 2%;
+    height: auto;
+    width: auto;
+    position: center;
+}
+
+/*----Titulo container----*/
+.containerRegistro h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 40px;
+}
+
+/*-----Boton registrar-----*/
+.containerRegistro button {
+    margin-top: auto;
+    border-bottom: 1px solid;
+    height: 50px;
+    width: 100%;
+    border: none;
+    margin-bottom: 4%;
+}
+
+/*------Formulario------*/
+.containerRegistro label {
+    margin: 0;
+    padding: 12;
+    display: block;
+}
+.containerRegistro input {
+    width: 100%;
+    margin-bottom: 20px;
+}

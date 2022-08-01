@@ -1,0 +1,78 @@
+/*-------Body gestor---------*/
+.bodygestores {
+    margin: 0px;
+    padding: 0;
+    background: url(../img/salacine.jpg) no-repeat center top;
+    height: 100vh;
+    width: auto;
+}
+
+/*----NavBar----*/
+.nav-item {
+	margin-left: 30px;
+}
+
+/*------Titulo gestor--------*/
+.bodygestores h1 {
+    margin: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #fff;
+}
+.bodygestores h4 {
+	color: #fff;
+	margin-left: 500px;
+	margin-bottom: 60px;
+}
+
+/*----Formulario gestor----*/
+#form-funciones label {
+	color: #fff;
+}
+.bodygestores input {
+	width: 200px;
+}
+.bodygestores select {
+	width: 400px;
+}
+#form-funciones {
+	margin-left: 450px;
+}
+/*------Estilos tabla------*/
+.bodygestores h3 {
+	color: #fff;
+}
+.bodygestores table {
+	color: #fff;
+}
+/*----Botones-----*/
+.btn-danger {
+	margin-bottom: 30px;
+}
+/*------Botones collapse gestor--------*/
+#btn-collapse-gestor {
+    margin-top: auto;
+    border-bottom: 1px solid;
+    height: 50px;
+    width: 440px;
+    border: none;
+    margin-bottom: 4%;
+}
+/*-----Boton rojo CERRAR SESION----*/
+.btn-rojo-session {
+    background-color:#d82a3c;
+    color: #fff;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 5px 15px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    border: none;
+}
+.btn-rojo-session:hover {
+    background-color:#bd2433;
+    color: #000;
+    text-decoration: none;
+}

@@ -1,0 +1,57 @@
+.loginbody {
+    margin: 0px;
+    padding: 0;
+    background: url(../img/salacine.jpg) no-repeat center top;
+    background-size: cover;
+    height: 100vh;
+    width: auto;
+}
+.btn-outline-success {
+    background-color: none;
+    color: white;
+    border-color: transparent;
+}
+.containerlogin {
+    background:#1C2833;
+    color: white;
+    padding: 70px 30px;
+    padding: 2%;
+    height: auto;
+    width: auto;
+    position: center;
+}
+.containerlogin h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 30px;
+}
+.containerlogin button {
+    margin-top: auto;
+    border-bottom: 1px solid;
+    height: 50px;
+    width: 100%;
+    color: black;
+    border: none;
+    margin-bottom: 4%;
+
+}
+#google {
+    background-color: #CB4335;
+}
+#google:hover {
+    cursor: pointer;
+    color: white;
+    background:#B03A2E;
+}
+
+.containerlogin label {
+    margin: 0;
+    padding: 12;
+    display: block;
+    color: black;
+}
+.containerlogin input {
+    width: 100%;
+    margin-bottom: 20px;
+}

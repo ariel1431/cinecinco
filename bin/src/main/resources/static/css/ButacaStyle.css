@@ -1,0 +1,50 @@
+.butacabody {
+    margin: 0px;
+    padding: 0;
+    background: url(../img/salacine.jpg) no-repeat center top;
+    background-size: cover;
+    height: 100vh;
+    width: auto;
+}
+.btn-outline-success {
+    background-color: none;
+    color: white;
+    border-color: transparent;
+}
+.btn-outline-success:hover {
+    background-color: #CB4335;
+    border-color: transparent;
+}
+.containerbutaca {
+    background: white;
+    color: black;
+    padding: 70px 30px;
+    padding: 3%;
+    height: 90vh;
+    width: auto;
+    position: center;
+}
+.btn-primary {
+    background-color: #CB4335;
+    border: none;
+    width: 180px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 480px;
+    border-color: black;
+}
+.btn-primary:hover {
+    background:#B03A2E;
+}
+.Screen-AllAreas {
+    margin-top: 80px;
+}
+.containerEntradas {
+    background: white;
+    color: black;
+    padding: 2%;
+    border-radius: 5px;
+}
+.pantalla {
+    margin-top: -35px;
+}
